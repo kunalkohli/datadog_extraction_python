@@ -104,5 +104,22 @@ data_cpu_metrics = extract(query, start, end, time_delta)
 ### Step 4: Data is available in data_cpu_metrics dataframe for analysis
 
 ```python 
-data_cpu_metrics.head(10)
+print(data_cpu_metrics.head(10))
+
+
+import seaborn as sns
+import numpy as np
+import matplotlib.pyplot as plt
+
+data_cpu_metrics['cpu_usage_metric'] = data_cpu_metrics['value'].astype(float)
+
+fig, ax = plt.subplots(figsize=(15, 10))
+
+sns.kdeplot(data_cpu_metrics['cpu_usage_metric'], ax = ax, bw= 1)
+plt.xlabel('CPU utilization')
+plt.ylabel('Density')
+plt.title('Visualizing distribution of CPU utilization')
+ax.get_legend().remove()
 ```
+
+<img width="822" alt="image" src="https://user-images.githubusercontent.com/32186649/204024863-4caa080c-3f3f-4eea-9b75-c7063a9ced52.png">
