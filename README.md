@@ -50,7 +50,7 @@ One thing to keep in mind is that **Datadog has a rate limit** based on [organiz
 
 def extract(query, start_at, end_at, time_delta):
     
-    print('Running extraction for rpm')
+    print('Running extraction for cpu utilization')
     
     '''
     datadog return data as a json blob with a field called 'series' that stores a list called 'pointlist' which has metrics like :
