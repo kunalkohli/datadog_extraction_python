@@ -91,7 +91,7 @@ def extract(query, start_at, end_at, time_delta):
         'metric': metric_list
     }
 
-    print('Finished extraction for rpm')
+    print('Finished extraction for cpu utilization')
     return pd.DataFrame.from_dict(all_data)
     
 #extract data into a dataframe    
