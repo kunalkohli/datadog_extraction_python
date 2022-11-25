@@ -37,7 +37,7 @@ time_delta = 600
 query = 'avg:system.cpu.user{*}' 
 ```
 
-One thing to keep in mind is that Datadog has a rate limit of 2,000 API requests in a 10 minute window. In case you face rate issues, try increasing the “time_delta” in the query above to reduce the number of requests you make to the Datadog API.
+One thing to keep in mind is that **Datadog has a rate limit** based on [organization policies](https://docs.datadoghq.com/api/latest/rate-limits/). In case you face rate issues, try increasing the “time_delta” in the query above to reduce the number of requests you make to the Datadog API.
 
 ### Step 3: Run the extraction logic. 
 ##### Take the start and the stop timestamp and split them into buckets of width = time_delta.
