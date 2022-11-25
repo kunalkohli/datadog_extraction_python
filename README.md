@@ -42,6 +42,10 @@ One thing to keep in mind is that **Datadog has a rate limit** based on [organiz
 ### Step 3: Run the extraction logic. 
 ##### Take the start and the stop timestamp and split them into buckets of width = time_delta.
 
+<img src=https://user-images.githubusercontent.com/32186649/204037984-885908d6-756b-4b24-9ef5-99020d53f458.png width="650" height="300" />
+
+
+
 ```python
 #Extraction Logic :
 # 1. take the datadog query 
