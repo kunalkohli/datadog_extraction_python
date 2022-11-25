@@ -20,7 +20,8 @@ options = {
 initialize(**options)
 ```
 
-### Step 2: Specify the parameters for time-series data extraction. Below we’re setting the time period from Thursday, May 20, 2021 12:00:00 AM to Wednesday, June 2, 2021 11:59:00 PM:
+### Step 2: Specify the parameters for time-series data extraction. 
+##### Below we’re setting the time period from Thursday, May 20, 2021 12:00:00 AM to Wednesday, June 2, 2021 11:59:00 PM:
 
 ```python
 # Specify the time period in epoch format over which you want to fetch the data. You can use https://www.epochconverter.com/ to get the timestamps
@@ -38,7 +39,8 @@ query = 'avg:system.cpu.user{*}'
 
 One thing to keep in mind is that Datadog has a rate limit of 2,000 API requests in a 10 minute window. In case you face rate issues, try increasing the “time_delta” in the query above to reduce the number of requests you make to the Datadog API.
 
-### Step 3: Run the extraction logic. Take the start and the stop timestamp and split them into buckets of width = time_delta.
+### Step 3: Run the extraction logic. 
+##### Take the start and the stop timestamp and split them into buckets of width = time_delta.
 
 ```python
 #Extraction Logic :
@@ -96,7 +98,7 @@ def extract(query, start_at, end_at, time_delta):
 data_cpu_metrics = extract(query, start, end, time_delta)
 ```
 
-### Step 4: data is available in data_cpu_metrics dataframe for analysis
+### Step 4: Data is available in data_cpu_metrics dataframe for analysis
 
 ```python 
 data_cpu_metrics.head(10)
