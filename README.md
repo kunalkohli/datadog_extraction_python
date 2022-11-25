@@ -25,8 +25,8 @@ initialize(**options)
 
 ```python
 # Specify the time period in epoch format over which you want to fetch the data. You can use https://www.epochconverter.com/ to get the timestamps
-start = 1621468800  # Thursday, May 20, 2021 12:00:00 AM
-end = 1622678340  # Wednesday, June 2, 2021 11:59:00 PM
+start = 1669133509  # Tuesday, November 22, 2022 16:11:49 GMT
+end = 1669392709  # Friday, 25 Nov 2022 16:11:49 GMT
 
 # run datadog metric collection for every 600 sec (10 min) window. 
 # This will remove the granularity issue discussed in the blog. 
@@ -83,6 +83,9 @@ def extract(query, start_at, end_at, time_delta):
         # increment the time spans 
         start_at = iteration_end # change start time as end of last iteration
         iteration_end = iteration_end + time_delta # increment reading frame
+        
+        #logging logic to see extraction progress
+        #print('finished extracting data from ', datetime.fromtimestamp(start_at).strftime('%c') , ' to ', datetime.fromtimestamp(iteration_end).strftime('%c'))
 
 
     all_data = {
